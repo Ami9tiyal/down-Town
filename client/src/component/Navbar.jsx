@@ -1,5 +1,5 @@
 import React from 'react';
-// import logo from '../logo.svg';
+import logo from '../logo.svg';
 import './Navbar.css'
 import { Link, useLocation } from 'react-router-dom';
 
@@ -8,6 +8,15 @@ const Navbar = () => {
     return (
         <>
             <header className="navbar_box">
+                <li>
+                    <Link to={"/"} className={`navbar_item ${location.pathname === "/" ? "active" : ""}`}>
+                        <div className='logo_container'>
+                            <img src={logo} alt="DownTown Logo" className='navbar_logo' />
+                            <span className='navbar_text'>Down Town</span>
+                        </div>
+                    </Link>
+                </li>
+
                 <li>
                     <Link to={"/account"} className={`navbar_item ${location.pathname === "/account" ? "active" : ""}`}>My Account</Link>
                 </li>

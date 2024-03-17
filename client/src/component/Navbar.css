@@ -7,12 +7,13 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 2rem;
+  height: 4rem;
   padding: 10px 0;
-  background: rgba(95, 158, 160, 0.416);
+  background: rgba(51, 249, 120, 0.416);
+  border: 1px solid green;
 }
 
-header > li {
+header li {
   list-style: none;
 }
 .navbar_item {
@@ -30,4 +31,16 @@ header > li {
 .navbar_item.active {
   color: #1931a9;
   text-shadow: 0 0 1px #1931a9;
+}
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+.navbar_logo {
+  border-radius: 50%;
+  width: 4rem;
+  margin-right: 5px;
+}
+.navbar_text {
+  font-size: 1.8rem; /* Adjust the font size as needed */
 }

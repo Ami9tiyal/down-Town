@@ -1,0 +1,14 @@
+.location_bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.location_input {
+  width: 25%;
+  height: 2rem;
+  border: 1px solid rgb(34, 117, 233);
+  outline: none;
+  border-radius: 0.7rem;
+  padding: 6px 14px;
+  font-size: 1rem;
+}

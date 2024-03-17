@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route, Link, Outlet } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Navbar from './component/Navbar';
+import Locationbar from './component/Locationbar';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ const NoMatch = () => {
 const MainSection = () => {
   return (
     <>
+      <Locationbar />
       <section className='home_section'>
         <div className="home_content">
           <Outlet />
