@@ -3,6 +3,7 @@ import Navbar from '../../component/Navbar'
 import Locationbar from '../../component/Locationbar'
 import { Card, Col, Row } from 'react-bootstrap'
 import './Home.css'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -11,49 +12,56 @@ const Home = () => {
         {
             title: "Indian",
             desc: "Indian cuisine can not be said a cuisine due to multiple diversity",
-            image: ""
+            image: "https://wallpapers.com/images/featured/indian-food-x2tv62mgy6kq4or3.jpg"
         },
         {
             title: "Chinese",
             desc: "Chinese cuisine is related to chinese dishes and platters",
-            image: ""
+            image: "https://media.istockphoto.com/id/545286388/photo/chinese-food-blank-background.jpg?s=612x612&w=0&k=20&c=pqOIy07YKO5PlU5VxjscwTGRrrZ8PluKMUjSOz-II60="
         },
         {
             title: "Italian",
             desc: "Italian cuisine is related to chinese dishes and platters",
-            image: ""
+            image: "https://media.istockphoto.com/id/1227415751/photo/full-table-of-italian-meals-on-plates-pizza-pasta-ravioli-carpaccio-caprese-salad-and-tomato.jpg?s=612x612&w=0&k=20&c=0qCRhYGQw0w6ahhVX-4ezayA9r81A81cwbPDbgRlC5s="
         },
         {
             title: "French",
             desc: "French cuisine is related to chinese dishes and platters",
-            image: ""
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR40TC9L95BWJ79G7EORUltuplSsSrM9Y4SIQ&usqp=CAU"
         },
     ]
 
     return (
         <>
-            <div className="main_sec">
+            <Locationbar />
+            <main className="main_sec">
 
-                <Locationbar />
+
+
                 <div className="cuisine_container">
-                    <Row xs={1} md={2} lg={4} className="g-4">
+                    <Row xs={1} md={2} className="g-5">
                         {Cuisines.map((item, idx) => (
                             <Col key={idx}>
-                                <Card>
-                                    <Card.Img variant="top" src="holder.js/100px160" />
-                                    <Card.Body>
-                                        <Card.Title>{item.title}</Card.Title>
-                                        <Card.Text>
-                                            {item.desc}
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to={"/menu"} className="navbar_item">
+
+                                    <Card>
+                                        <Card.Img className="card-img" variant="top" src={item.image} />
+                                        <Card.Body>
+                                            <Card.Title>{item.title}</Card.Title>
+                                            <Card.Text>
+                                                {item.desc}s
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </Col>
                         ))}
                     </Row>
                 </div>
 
-            </div>
+
+            </main>
+
             <Navbar />
         </>
     )
